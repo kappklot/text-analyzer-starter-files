@@ -78,6 +78,18 @@ $(document).ready(function() {
 
 		$(".print-word-count").html(splitWords.length);
 
+		// if i === i, then don't print
+
+		var uniqueWords = [];
+		splitWords.forEach(function(word) {
+			if (uniqueWords.indexOf(word) === -1){
+				uniqueWords.push(word);
+			}
+
+				
+		});
+		$(".print-unique-word-count").html(uniqueWords.length);
+
 	})
 })
 
