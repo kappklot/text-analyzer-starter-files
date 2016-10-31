@@ -101,9 +101,20 @@ $(document).ready(function() {
 // writing a function like 91 
 // add class and print 
 
-$(".print-average-sentence.length")
+	 });
+var period = ".";
+var sentence = $("#user-text").val();
+var splitSentences = sentence.split(period);
 
-	})
-})
+var allSentenceLength = 0;
+splitSentences.forEach(function(sentence){
+var sentenceLength = sentence.length
+allSentenceLength += sentence.length
+});
+
+var sentenceAverage = allSentenceLength/splitSentences.length;
+
+	$(".print-average-sentence-length").html(sentenceAverage);
+} )
 
 
