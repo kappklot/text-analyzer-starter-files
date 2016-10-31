@@ -81,14 +81,27 @@ $(document).ready(function() {
 		// if i === i, then don't print
 
 		var uniqueWords = [];
-		splitWords.forEach(function(word) {
+		for (var i = 0; i < splitWords.length; i += 1) {
+			var word = splitWords[i];
 			if (uniqueWords.indexOf(word) === -1){
 				uniqueWords.push(word);
 			}
+		}
 
-				
+		var allWordLength = 0;
+		splitWords.forEach(function(word) {
+				var wordLength = word.length 
+			allWordLength += wordLength
 		});
+
+		var wordAverage = allWordLength/splitWords.length;
+		$(".print-average-word-length").html(wordAverage);
 		$(".print-unique-word-count").html(uniqueWords.length);
+// what is a sentence? split on periods rather than spaces
+// writing a function like 91 
+// add class and print 
+
+$(".print-average-sentence.length")
 
 	})
 })
