@@ -27,6 +27,8 @@
 	get lots of logging
 
 	log contents of user text 
+
+	show()
 } */
 
 
@@ -57,10 +59,21 @@ $(document).ready(function() {
 	$("#text-input").submit(makeTextGreen);
 
 	$("#text-input").submit(function(event){
-		$("#user-text").css('background-color','purple');
-		
+	$("#user-text").css('background-color','purple');
+
+	//$(".word-count").size();
+
+	
+
 		var words = $("#user-text").val();
 		console.log(words);
+
+	var numSentences = text.match(/[.!?]+/g) ? text.match(/[.!?]+/g).length : 1;
+  var wordCount = tokenizeText(text).length;
+  return (wordCount / numSentences).toFixed(2);
+
+
+	$(".text-report").show();
 
 	})
 } )
